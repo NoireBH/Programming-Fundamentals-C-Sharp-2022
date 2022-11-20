@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{3332600A-9638-451E-8EE5-8BF4C7F3B2F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01. Furniture", "01. Furniture\01. Furniture.csproj", "{3332600A-9638-451E-8EE5-8BF4C7F3B2F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02. Race", "02. Race\02. Race.csproj", "{F62FB062-BD5F-44CD-AB25-328FB3A4FBD8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. SoftUni Bar Income", "03. SoftUni Bar Income\03. SoftUni Bar Income.csproj", "{69E63D7F-A939-4F43-8291-8246B4C1C5AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04. Star Enigma", "04. Star Enigma\04. Star Enigma.csproj", "{ACBE114F-6387-45F1-8D1D-8ADEF15EDC2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Nether Realms", "05. Nether Realms\05. Nether Realms.csproj", "{27CF594B-DC74-44F6-A693-6DDFC58F504D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{3332600A-9638-451E-8EE5-8BF4C7F3B2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3332600A-9638-451E-8EE5-8BF4C7F3B2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3332600A-9638-451E-8EE5-8BF4C7F3B2F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62FB062-BD5F-44CD-AB25-328FB3A4FBD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62FB062-BD5F-44CD-AB25-328FB3A4FBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62FB062-BD5F-44CD-AB25-328FB3A4FBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62FB062-BD5F-44CD-AB25-328FB3A4FBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69E63D7F-A939-4F43-8291-8246B4C1C5AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E63D7F-A939-4F43-8291-8246B4C1C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E63D7F-A939-4F43-8291-8246B4C1C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E63D7F-A939-4F43-8291-8246B4C1C5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACBE114F-6387-45F1-8D1D-8ADEF15EDC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBE114F-6387-45F1-8D1D-8ADEF15EDC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBE114F-6387-45F1-8D1D-8ADEF15EDC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBE114F-6387-45F1-8D1D-8ADEF15EDC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CF594B-DC74-44F6-A693-6DDFC58F504D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CF594B-DC74-44F6-A693-6DDFC58F504D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CF594B-DC74-44F6-A693-6DDFC58F504D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CF594B-DC74-44F6-A693-6DDFC58F504D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
