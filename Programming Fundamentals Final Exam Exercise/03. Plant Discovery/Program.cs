@@ -20,13 +20,16 @@ namespace _03._Plant_Discovery
                 if (!plantsRarity.ContainsKey(plant))
                 {
                     plantsRarity.Add(plant, rarity);
+                    plantRating.Add(plant, new List<double>());
                 }
                 else
                 {
                     plantsRarity[plant] = rarity;
                 }
             }
+
             string input;
+
             while ((input = Console.ReadLine())!= "Exhibition")
             {
                 string[] cmd = input.Split(":" , StringSplitOptions.RemoveEmptyEntries);
@@ -40,11 +43,7 @@ namespace _03._Plant_Discovery
 
                     if (plantsRarity.ContainsKey(plant))
                     {
-                        if (!plantRating.ContainsKey(plant))
-                        {
-                            plantRating.Add(plant, new List<double>());
-                        }
-                        
+    
                         plantRating[plant].Add(rating);
                     }
                     else
@@ -87,28 +86,17 @@ namespace _03._Plant_Discovery
             
             foreach (var plant in plantsRarity)
             {
-                double currentRating = 0;
-                List<double> listRating = new List<double>();
-
-                foreach (var rating in plantRating)
+                if (plantRating[plant.Key].Count > 0)
                 {
-                    if (plant.Key == rating.Key)
-                    {
-                        listRating = rating.Value;
-                        break;
-                    }
+                    double currRating = plantRating[plant.Key].Average();
+                    Console.WriteLine($"- {plant.Key}; Rarity: {plant.Value}; Rating: {currRating:f2}");
                 }
-
-                if (listRating.Count > 0)
+                else
                 {
-                    currentRating = listRating.Average();
-
-                }
-                Console.WriteLine($"- {plant.Key}; Rarity: {plant.Value}; Rating: {currentRating:f2}");
-            }
-            
-
-
+                    Console.WriteLine($"- {plant.Key}; Rarity: {plant.Value}; Rating: {0:f2}");
+                }                                   
+                
+            }           
         }
     }
 }

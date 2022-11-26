@@ -41,6 +41,7 @@ namespace _01._Secret_Chat
                     }
                     
                 }
+
                 else if (command == "ChangeAll")
                 {
                     string subStr = cmd[1];
