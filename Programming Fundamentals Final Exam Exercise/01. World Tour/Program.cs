@@ -1,55 +1,62 @@
 ﻿using System;
+using System.Text;
 
 namespace _01._World_Tour
 {
     internal class Program
     {
         static void Main(string[] args)
-        {
-            string stops = Console.ReadLine();
-            string input;
-            while ((input = Console.ReadLine()) != "Travel")
-            {
-                string[] cmd = input.Split(":");
-                string command = cmd[0];
+        {           
+                StringBuilder stops = new StringBuilder(Console.ReadLine());
+                string input;
 
-                if (command == "Add Stop")
+                while ((input = Console.ReadLine()) != "Travel")
                 {
-                    int index = int.Parse(cmd[1]);
-                    string name = cmd[2];
-                    if ((index >= 0) && (index < stops.Length))
-                    {
-                      stops =  stops.Insert(index, name);
-                    }
-                    Console.WriteLine(stops);
-                }
-                else if (command == "Remove Stop")
-                {
-                    int startIdx = int.Parse(cmd[1]);
-                    int endIdx = int.Parse(cmd[2]);
+                    string[] cmd = input.Split(":");
+                    string command = cmd[0];
 
-                    if (startIdx >= 0 && endIdx < stops.Length)
+                    if (command == "Add Stop")
                     {
-                        stops = stops.Remove(startIdx, endIdx - startIdx + 1);
+                        int index = int.Parse(cmd[1]);
+                        string str = cmd[2];
+
+                        if (index >= 0 && index <= stops.Length - 1)
+                        {
+                            stops.Insert(index, str);
+
+                        }
+                        Console.WriteLine(stops);
                     }
 
-                    Console.WriteLine(stops);
-                }
-                else if (command == "Switch")
-                {
-                    string oldText = cmd[1];
-                    string newText = cmd[2];
-
-                    if (stops.Contains(oldText))
+                    else if (command == "Remove Stop")
                     {
-                       stops = stops.Replace(oldText, newText);
+                        int startIndex = int.Parse(cmd[1]);
+                        int endIndex = int.Parse(cmd[2]);
+
+                        if (startIndex >= 0 && endIndex <= stops.Length - 1)
+                        {
+                            stops.Remove(startIndex, endIndex - startIndex + 1);
+
+                        }
+                        Console.WriteLine(stops);
                     }
 
-                    Console.WriteLine(stops);
+                    else if (command == "Switch")
+                    {
+                        string oldString = cmd[1];
+                        string newString = cmd[2];
+
+                        if (stops.ToString().Contains(oldString))
+                        {
+                            stops.Replace(oldString, newString);
+
+                        }
+                        Console.WriteLine(stops);
+                    }
                 }
+
+                Console.WriteLine($"Ready for world tour! Planned stops: {stops}");
             }
-            Console.WriteLine($"Ready for world tour! Planned stops: {stops}");
-
         }
     }
-}
+
