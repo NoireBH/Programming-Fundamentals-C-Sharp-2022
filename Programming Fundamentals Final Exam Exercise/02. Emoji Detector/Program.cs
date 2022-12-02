@@ -9,25 +9,17 @@ namespace _02._Emoji_Detector
     {
         static void Main(string[] args)
         {
-            string numberPattern = @"(?<number>[0-9])";
-            string emojiPattern = @"(:{2}|\*{2})(?<emoji>[A-Z][a-z]{2,})\1";
-            Regex numberRegex = new Regex(numberPattern);
-            Regex emojiRegex = new Regex(emojiPattern);
-            BigInteger coolThreshold = 1;
-            
-
+            string pattern = @"(:{2}|\*{2})(?<emoji>[A-Z][a-z]{2,})\1";
             string input = Console.ReadLine();
-            MatchCollection matches = emojiRegex.Matches(input);
-            MatchCollection numberMatches = numberRegex.Matches(input);
+            Regex regex = new Regex(pattern);
+            MatchCollection matches = regex.Matches(input);
+            BigInteger coolThreshold = CalculateCoolnessThreshold(input);
 
-            foreach (Match number in numberMatches)
-            {
-                coolThreshold *= int.Parse(number.ToString());
-            }
             Console.WriteLine($"Cool threshold: {coolThreshold}");
             Console.WriteLine($"{matches.Count} emojis found in the text. The cool ones are:");
+
             foreach (Match item in matches)
-            {                
+            {
                 string emoji = item.Groups["emoji"].ToString();
                 int coolness = 0;
 
@@ -35,13 +27,26 @@ namespace _02._Emoji_Detector
                 {
                     coolness += emoji[i];
                 }
-                
+
                 if (coolness >= coolThreshold)
                 {
                     Console.WriteLine(item.Value);
                 }
-                
             }
+        }
+
+        static BigInteger CalculateCoolnessThreshold(string input)
+        {
+            BigInteger coolnessThreshold = 1;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (char.IsDigit(input[i]))
+                {
+                    coolnessThreshold *= input[i];
+                }
+            }
+            return coolnessThreshold;
         }
     }
 }
+
