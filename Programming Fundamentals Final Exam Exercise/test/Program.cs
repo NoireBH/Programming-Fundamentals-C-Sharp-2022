@@ -44,7 +44,7 @@ namespace test
             {
                 if (char.IsDigit(input[i]))
                 {
-                    coolnessThreshold *= input[i];
+                    coolnessThreshold *= int.Parse(input[i].ToString());
                 }
             }
             return coolnessThreshold;
