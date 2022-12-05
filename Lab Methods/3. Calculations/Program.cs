@@ -5,34 +5,33 @@ namespace _3._Calculations
     internal class Program
     {
         static void Main(string[] args)
-        {
-            string command = Console.ReadLine();
-            int number = int.Parse(Console.ReadLine());
-            int number2 = int.Parse(Console.ReadLine());
-            Calculations(command, number, number2);
-            
-
+        {   
+            string typeOfCommand = Console.ReadLine();
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+          int result = Calculate(typeOfCommand, a, b);
+            Console.WriteLine(result);
         }
 
-         static void Calculations(string command, int number, int number2)
+        public static int Calculate(string typeOfCommand, int a ,int b)
         {
-            if (command == "add")
+            int result = 0;
+            switch (typeOfCommand)
             {
-                Console.WriteLine(number + number2);
-                
+                case "add":
+                     result = a + b;
+                    break;
+                case "subtract":
+                    result = a - b;
+                    break;
+                case "multiply":
+                    result = a * b;
+                    break;
+                case "divide":
+                    result = a / b;
+                    break;              
             }
-            else if (command == "multiply")
-            {
-                Console.WriteLine(number * number2); 
-            }
-            else if (command == "subtract")
-            {
-                Console.WriteLine(number - number2); 
-            }
-            else if (command == "divide")
-            {
-                Console.WriteLine(number / number2);
-            }
+            return result;
         }
     }
 }
